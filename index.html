@@ -6,19 +6,24 @@
     <title>Redirect from Instagram</title>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            if (navigator.userAgent.includes("Instagram")) {
+            const isInstagramBrowser = navigator.userAgent.includes("Instagram");
+
+            if (isInstagramBrowser) {
+                // Force open in external browser
                 const link = document.createElement("a");
-                link.href = 'https://ig.me/m/_dkk17';
+                link.href = window.location.href; // Open the same link in real browser
                 link.target = "_blank";
-                link.download = ""; // Forces opening in the real browser
+                link.download = ""; 
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
+            } else {
+                // If already in external browser, redirect to Instagram DM
+                window.location.href = "https://ig.me/m/_dkk17";
             }
         });
     </script>
 </head>
 <body>
-    
 </body>
 </html>
