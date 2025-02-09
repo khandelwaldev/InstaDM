@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect from Instagram</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (navigator.userAgent.includes("Instagram")) {
+                const link = document.createElement("a");
+                link.href = 'https://ig.me/m/_dkk17';
+                link.target = "_blank";
+                link.download = ""; // Forces opening in the real browser
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
